@@ -1,12 +1,9 @@
 # react.js
 
-# webpack-5.x
+# webpack-5
 
-* [Configuration File (Update at 2022.04.27)](./webpack-5/Configuration File.md)
-
-* [Entry Point (Update at 2022.04,28)](./webpack-5/Entry Point.md)
-
-  
+* [Configuration File (Update at 2022.04.27)](./webpack-5/Configuration_File.md)
+* [Entry Point (Update at 2022.04,28)](./webpack-5/Entry_Point.md)
 
 # eslint
 
