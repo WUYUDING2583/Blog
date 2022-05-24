@@ -25,6 +25,8 @@ The files we need as basic are listed below and all of them are in root folder:
 
 ## 3.1 Overview
 
+Checking browsers is to check if user has set the `browserslist` configuration in the project. Below is the overview of `check browsers`:
+
 ![CheckBrowsers](./assets/Implementation_of_npm_start/CheckBrowsers.png)
 
 ## 3.2  Load browserslist config
@@ -57,3 +59,17 @@ If user don't set `browserlist` in project, then we should ask user if set the d
 ```
 
 If user allow to set default browsers, then we can write it into the project `package.json`
+
+Default browsers:
+
+```js
+const defaultBrowsers = {
+  production: ['>0.2%', 'not dead', 'not op_mini all'],
+  development: [
+    'last 1 chrome version',
+    'last 1 firefox version',
+    'last 1 safari version',
+  ],
+};
+```
+
