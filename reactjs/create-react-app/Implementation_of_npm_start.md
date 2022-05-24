@@ -112,3 +112,12 @@ prompts(question)
 ```
 
 # 5. Start webpack dev server
+
+## 5.1 Overview
+
+
+
+![StartWebpackDevServer](./assets/Implementation_of_npm_start/StartWebpackDevServer.png)
+
+# 6. Open browser
+
