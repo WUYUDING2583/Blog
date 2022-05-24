@@ -25,7 +25,7 @@ The files we need as basic are listed below and all of them are in root folder:
 
 ## 3.1 Overview
 
-Checking browsers is to check if user has set the `browserslist` configuration in the project. Below is the overview of `check browsers`:
+Checking browsers is to check if user has set the `browserslist` configuration in the project, if not we help uesr to set the default browsers. Below is the overview of `check browsers`:
 
 ![CheckBrowsers](./assets/Implementation_of_npm_start/CheckBrowsers.png)
 
@@ -34,6 +34,7 @@ Checking browsers is to check if user has set the `browserslist` configuration i
 Load the `browserslist` config user have set in the project.
 
 ```js
+const browserslist = require('browserslist');
 browserslist.loadConfig()
 ```
 
@@ -73,3 +74,41 @@ const defaultBrowsers = {
 };
 ```
 
+# 4. Choose port
+
+## 4.1 Overview
+
+After checking the browser, we should detect the free port which will run our dev server. In this flow, we have the default port **3000**, below is the overview of detect port:
+
+![ChoosePort](./assets/Implementation_of_npm_start/ChoosePort.png)
+
+## 4.2 Detect port
+
+Detect the default port **3000** on the localhost is occupied or not.
+
+```js
+const detect = require('detect-port-alt');
+const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 3000;
+const HOST = process.env.HOST || "0.0.0.0";
+detect(defaultPort, host)
+```
+
+## 4.3 Switch port
+
+If the default port is occupied, then we need to ask user to switch port by prompts.
+
+```js
+const question = {
+  type: 'confirm',
+  name: 'shouldChangePort',
+  message:
+    chalk.yellow(
+      message +
+      `${existingProcess ? ` Probably:\n  ${existingProcess}` : ''}`
+    ) + '\n\nWould you like to run the app on another port instead?',
+  initial: true,
+};
+prompts(question)
+```
+
+# 5. Start webpack dev server
