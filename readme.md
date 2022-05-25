@@ -2,7 +2,7 @@
 
 ## create-react-app
 
-* [Implementation of `npm start` (Update at 2022.05.22)](./reactjs/create-react-app/Implementation_of_npm_start.md)
+- [Implementation of `npm start` (Update at 2022.05.24)](./reactjs/create-react-app/Implementation_of_npm_start.md)
 
 # webpack-5
 

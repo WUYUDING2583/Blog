@@ -139,8 +139,50 @@ Before we proceed, we need to get the browser environment values stored in `proc
 
 ## 6.3 Start browser process
 
+In this article, we only consider about how to open browser, so the other two actions `NONE` and `SCRIPT` will be ignored.
 
+### 6.3.1 Try to open chromium browser with AppleScript
+
+If user on a **OS X** and haven't requested a different browser, we can try to open Chromium browser with AppleScript which allow us use existing tab possible instead of creating a new one.
+
+Suportted chromium browsers are listed here:
+
+* Google Chrome Canary
+* Google Chrome
+* Microsoft Edge
+* Brave Browser
+* Vivaldi
+* Chromium
+
+Then we can use `execSync` to open browser by command.
 
 ```js
+const execSync = require('child_process').execSync;
+execSync('ps cax | grep "' + chromiumBrowser + '"');
+execSync(
+  'osascript openChrome.applescript "' +
+  encodeURI(url) +
+  '" "' +
+  chromiumBrowser +
+  '"',
+  {
+    cwd: __dirname,
+    stdio: 'ignore',
+  }
+);
+```
+
+### 6.3.2 Open a new tab
+
+When we fail to reuse a existing tab, then we can directly to open a new tab for it.
+
+```js
+const open = require('open');
+try{
+  const options={app: browser, wait: false, url: true};
+  open(url,options).catch(()=>{})
+}catch(err){
+  
+}
 ```
 
