@@ -121,3 +121,26 @@ prompts(question)
 
 # 6. Open browser
 
+## 6.1 Overview
+
+After starting webpack dev server, we need to open browser for user.
+
+![OpenBrowser](./assets/Implementation_of_npm_start/OpenBrowser.png)
+
+## 6.2 Get browser environment
+
+Before we proceed, we need to get the browser environment values stored in `process.env.BROWSER` and `process.env.BROWSER_ARG` and based on the `process.env.BROWSER` to decide the action we will have next.
+
+**Action**:
+
+1. `NONE`
+2. `BROWSER`
+3. `SCRIPT`
+
+## 6.3 Start browser process
+
+
+
+```js
+```
+
