@@ -19,9 +19,11 @@ devServer.startCallback(() => {
 });
 ```
 
-In here, the `devServerOptions` is the basic config for `webpack-dev-server` , it tells `webpack-dev-sever` to serve the files from `./dist` directory on `localhost:8080`.
+In here, the `devServerOptions` is the basic config for `webpack-dev-server` , it tells `webpack-dev-sever` to serve the static files from `./dist` directory on `localhost:8080`.
 
 But `webpack-dev-server` won't generate output files into `dist` directory after compiling, instead, it keeps bundled files in memory and serves them as if they are real files mounted at server's root path.
+
+When we open `localhost:8080` in browser while we don't provide any static files e.g. **index.html**, the server will get `404` error because it cannot find any file `webpack dev server` can serve. Thus we need to provide our static files in the declared `static directory`. If the `static` configuration is not provided, the default value of it is `public directory`.
 
 # API
 
@@ -126,4 +128,8 @@ const stopServer=()=>{
 
 setTimeout(stopServer,5000);
 ```
+
+# Configuration
+
+## static
 
