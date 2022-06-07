@@ -11,6 +11,8 @@ The given sequence of paths will be proceed from right to left, with each path p
 
 After all paths proceed, if an absolute path still haven't be generated, then the current working directory path will be prepended to it.
 
+> The current working directory is the directory where we run our node code.
+
 If the parameters are not provided, then `path.resolve()` will return the absolute path of current working directory.
 
 ```js
