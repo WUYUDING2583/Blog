@@ -1,4 +1,4 @@
-# Configuration File (Update at 2022.04.27)
+# Configuration File
 
 The default webpack configuration file name is `webpack.config.js` which is put in root folder.
 
