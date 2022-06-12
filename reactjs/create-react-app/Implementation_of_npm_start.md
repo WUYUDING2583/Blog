@@ -1,4 +1,4 @@
-# 1. Overview
+# t1. Overview
 
 In this chapter, we will go through the implementation detail of `npm start` of `create-react-app`.
 
@@ -35,7 +35,7 @@ Load the `browserslist` config user have set in the project.
 
 ```js
 const browserslist = require('browserslist');
-browserslist.loadConfig()
+browserslist.loadConfig(opts)
 ```
 
 If the `browserslist` configuration exists, we can resolve this and finish checking browsers. Otherwise need to check this checking behaviour is a second time checking.
@@ -56,7 +56,7 @@ If user don't set `browserlist` in project, then we should ask user if set the d
     initial: true,
   };
 
-  return prompts(question).then(answer => answer.shouldSetBrowsers);
+  return prompts(question).dthen(answer => answer.shouldSetBrowsers);
 ```
 
 If user allow to set default browsers, then we can write it into the project `package.json`
@@ -123,13 +123,13 @@ prompts(question)
 
 ## 6.1 Overview
 
-After starting webpack dev server, we need to open browser for user.
+After starting webpack dev server, we need to open browser (try our best to reuse the existing browser tab) for user. 
 
 ![OpenBrowser](./assets/Implementation_of_npm_start/OpenBrowser.png)
 
 ## 6.2 Get browser environment
 
-Before we proceed, we need to get the browser environment values stored in `process.env.BROWSER` and `process.env.BROWSER_ARG` and based on the `process.env.BROWSER` to decide the action we will have next.
+Before we proceed, we need to get the browser environment values stored in `process.env.BROWSER` and `process.env.BROWSER_ARG`. Based on the `process.env.BROWSER` to decide the action we will have next.
 
 **Action**:
 
