@@ -4,7 +4,7 @@
 
 - [Implementation of `npm start` (Update at 2022.06.12)](./reactjs/create-react-app/implementation_of_npm_start.md)
 
-## react detail
+## render
 
 * [What happened in root.render() function (Update at 2022.06.23)](./reactjs/What_happen_in_root.render().md)
 
